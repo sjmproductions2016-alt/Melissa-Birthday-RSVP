@@ -59,55 +59,28 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: illustration */}
-        <div className="hero-illustration" aria-hidden="true">
-          <div className="hero-castle">
-            {/* Crown */}
-            <div className="hc-crown">👑</div>
-
-            {/* Keep */}
-            <div className="hc-keep">
-              <div className="hc-keep-top">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="hc-merlon" />
-                ))}
-              </div>
-              <div className="hc-window hc-window-top" />
-              <div className="hc-arch" />
+        {/* Right: portrait */}
+        <div className="hero-illustration">
+          <div className="hero-portrait-wrap">
+            <div className="hero-portrait-frame">
+              <img
+                src="/images/melissa-birthday/melissa-princess-portrait.png"
+                alt="Melissa dressed as a princess for her 10th birthday celebration"
+                className="hero-portrait"
+                loading="eager"
+                decoding="async"
+              />
             </div>
-
-            {/* Left tower */}
-            <div className="hc-tower hc-tower-l">
-              <div className="hc-tower-top">
-                {[...Array(3)].map((_, i) => (
-                  <span key={i} className="hc-merlon" />
-                ))}
-              </div>
-              <div className="hc-window" />
-            </div>
-
-            {/* Right tower */}
-            <div className="hc-tower hc-tower-r">
-              <div className="hc-tower-top">
-                {[...Array(3)].map((_, i) => (
-                  <span key={i} className="hc-merlon" />
-                ))}
-              </div>
-              <div className="hc-window" />
-            </div>
-
-            {/* Floating bricks around castle */}
-            <div className="hc-bricks">
+            {/* Floating bricks around portrait */}
+            <div className="hc-bricks" aria-hidden="true">
               <div className="hc-brick hc-brick-pink" />
               <div className="hc-brick hc-brick-gold" />
               <div className="hc-brick hc-brick-purple" />
               <div className="hc-brick hc-brick-pink2" />
             </div>
-
-            {/* Stars */}
-            <span className="hc-star hc-star-1">✦</span>
-            <span className="hc-star hc-star-2">✦</span>
-            <span className="hc-star hc-star-3">✦</span>
+            <span className="hc-star hc-star-1" aria-hidden="true">✦</span>
+            <span className="hc-star hc-star-2" aria-hidden="true">✦</span>
+            <span className="hc-star hc-star-3" aria-hidden="true">✦</span>
           </div>
         </div>
       </div>

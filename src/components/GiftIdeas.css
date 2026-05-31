@@ -2,6 +2,23 @@
   background: linear-gradient(180deg, var(--clr-purple-800) 0%, var(--clr-purple-950) 100%);
 }
 
+/* Gift flatlay photo */
+
+.gifts-photo-wrap {
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,215,0,0.15);
+}
+
+.gifts-photo {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
 .gifts-sub {
   text-align: center;
   color: rgba(255,255,255,0.55);

@@ -113,6 +113,12 @@ export default function SignatureWall() {
               key={w.id}
               className={`wish-card ${CARD_COLORS[i % CARD_COLORS.length]} ${w.id === justAdded ? 'wish-card-new' : ''}`}
             >
+              <div className="wish-brick-studs" aria-hidden="true">
+                <span className="wish-stud" />
+                <span className="wish-stud" />
+                <span className="wish-stud" />
+                <span className="wish-stud" />
+              </div>
               {w.isSample && (
                 <span className="wish-sample-badge" aria-label="Example wish">Example</span>
               )}

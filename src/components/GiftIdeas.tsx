@@ -13,7 +13,15 @@ export default function GiftIdeas() {
   return (
     <section className="section gifts-section" id="gifts" aria-label="Gift Ideas">
       <div className="container">
-        <span className="section-crown" aria-hidden="true">🎁</span>
+        <div className="gifts-photo-wrap">
+          <img
+            src="/images/melissa-birthday/princess-gift-ideas-flatlay.png"
+            alt="Princess-themed gift ideas for Melissa's 10th birthday"
+            className="gifts-photo"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
         <h2 className="section-title">Royal Gift Ideas</h2>
         <p className="gifts-sub">Not required — your presence is the greatest gift! But if you'd like a guide:</p>
 

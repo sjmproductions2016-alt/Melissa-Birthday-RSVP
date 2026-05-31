@@ -2,12 +2,53 @@
   background: linear-gradient(180deg, var(--clr-purple-950) 0%, var(--clr-purple-800) 100%);
 }
 
+/* Split header: invitation card + title */
+
+.rsvp-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 720px) {
+  .rsvp-header {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+}
+
+.rsvp-invite-col {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+@media (min-width: 720px) {
+  .rsvp-invite-col { width: 240px; }
+}
+
+.rsvp-invite-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 3px rgba(255,215,0,0.25);
+  object-fit: cover;
+}
+
+.rsvp-header-copy {
+  flex: 1;
+}
+
+.rsvp-header-copy .section-title-editorial {
+  margin-bottom: 0.75rem;
+}
+
 .rsvp-deadline-note {
-  text-align: center;
   color: rgba(255,255,255,0.65);
   font-size: 0.95rem;
-  margin-top: -1.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .rsvp-deadline-note strong {

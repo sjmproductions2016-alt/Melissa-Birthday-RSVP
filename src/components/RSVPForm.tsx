@@ -74,18 +74,27 @@ export default function RSVPForm() {
   return (
     <section className="section rsvp-section" id="rsvp" aria-label="RSVP Form">
       <div className="container">
-        <span className="section-crown" aria-hidden="true">📬</span>
-        <h2 className="section-title">Send Your Royal RSVP</h2>
-        <p className="rsvp-deadline-note">
-          Please RSVP by <strong>September 8, 2026</strong>
-        </p>
+        <div className="rsvp-header">
+          <div className="rsvp-invite-col">
+            <img
+              src="/images/melissa-birthday/melissa-rsvp-invitation-card.png"
+              alt="Melissa's Royal Birthday Party Invitation"
+              className="rsvp-invite-img"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="rsvp-header-copy">
+            <h2 className="section-title-editorial">
+              Send Your<br /><strong>Royal RSVP</strong>
+            </h2>
+            <p className="rsvp-deadline-note">
+              Please RSVP by <strong>September 8, 2026</strong>
+            </p>
+          </div>
+        </div>
 
         <form className="rsvp-form" onSubmit={handleSubmit} noValidate>
-          <div className="rsvp-note">
-            <span aria-hidden="true">ℹ️</span>
-            RSVPs are saved locally in your browser. Backend integration (Formspree / email) can be connected here.
-          </div>
-
           <div className="rsvp-row rsvp-row-2">
             <div className="rsvp-field">
               <label htmlFor="guestName" className="rsvp-label">Guest Name <span aria-hidden="true">*</span></label>

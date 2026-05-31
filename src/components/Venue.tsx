@@ -9,15 +9,22 @@ const scrollTo = (id: string) =>
 export default function Venue() {
   return (
     <section className="section venue-section" id="venue" aria-label="Venue and Location">
+      <div className="venue-photo-banner">
+        <img
+          src="/images/melissa-birthday/princess-venue-pre-event-setup.png"
+          alt="LEGO Discovery Center Atlanta venue set up for Melissa's princess birthday party"
+          className="venue-banner-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="venue-banner-overlay" aria-hidden="true" />
+        <div className="venue-banner-label">
+          <h2 className="venue-banner-title">Venue & Location</h2>
+        </div>
+      </div>
+
       <div className="container">
-        <span className="section-crown" aria-hidden="true">📍</span>
-        <h2 className="section-title">Venue & Location</h2>
-
         <div className="venue-card">
-          <div className="venue-icon-col" aria-hidden="true">
-            <span className="venue-icon">🏰</span>
-          </div>
-
           <div className="venue-info">
             <h3 className="venue-name">LEGO Discovery Center</h3>
             <address className="venue-address">

@@ -13,8 +13,17 @@ export default function Menu() {
   return (
     <section className="section menu-section" id="menu" aria-label="Party Menu">
       <div className="container">
-        <span className="section-crown" aria-hidden="true">🍽️</span>
-        <h2 className="section-title">Royal Party Menu</h2>
+        <div className="menu-photo-banner">
+          <img
+            src="/images/melissa-birthday/princess-party-food-table.png"
+            alt="Party food table set up for Melissa's princess birthday celebration"
+            className="menu-banner-img"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="menu-banner-overlay" aria-hidden="true" />
+          <h2 className="menu-banner-title">Royal Party Menu</h2>
+        </div>
         <p className="menu-sub">Served to all kingdom guests on October 10, 2026</p>
 
         <div className="menu-grid">
