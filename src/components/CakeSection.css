@@ -1,0 +1,256 @@
+.cake-section {
+  background: radial-gradient(ellipse at 50% 20%, #3D0A70 0%, #1A0535 60%, #0D0220 100%);
+  overflow: hidden;
+}
+
+.cake-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .cake-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* ---- CSS Cake Art ---- */
+
+.cake-art {
+  position: relative;
+  width: 260px;
+  height: 330px;
+  margin: 0 auto;
+  animation: cakeFloat 4s ease-in-out infinite;
+}
+
+@media (min-width: 480px) {
+  .cake-art { width: 300px; height: 380px; }
+}
+
+/* Sparkles around cake */
+
+.cake-sparkles { position: absolute; inset: -40px; pointer-events: none; }
+
+.ck-sparkle {
+  position: absolute;
+  font-size: 1.1rem;
+  animation: sparkleRing 3s ease-in-out infinite;
+  left: 50%;
+  top: 50%;
+}
+
+.ck-sparkle-0 { color: #FFD700; transform-origin: 120px 0; animation-delay: 0s; }
+.ck-sparkle-1 { color: #F06292; transform-origin: 85px 85px; animation-delay: 0.4s; }
+.ck-sparkle-2 { color: #FFD700; transform-origin: 0 120px; animation-delay: 0.8s; }
+.ck-sparkle-3 { color: #C48BE0; transform-origin: -85px 85px; animation-delay: 1.2s; }
+.ck-sparkle-4 { color: #FFD700; transform-origin: -120px 0; animation-delay: 1.6s; }
+.ck-sparkle-5 { color: #F06292; transform-origin: -85px -85px; animation-delay: 2.0s; }
+.ck-sparkle-6 { color: #FFD700; transform-origin: 0 -120px; animation-delay: 2.4s; }
+.ck-sparkle-7 { color: #C48BE0; transform-origin: 85px -85px; animation-delay: 2.8s; }
+
+/* Crown */
+
+.cake-crown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  z-index: 10;
+  animation: glowPulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 14px rgba(255,215,0,0.8));
+}
+
+/* Candles */
+
+.cake-candles {
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 6;
+}
+
+@media (min-width: 480px) {
+  .cake-candles { bottom: 240px; }
+}
+
+.candle {
+  width: 9px;
+  height: 34px;
+  border-radius: 4px 4px 2px 2px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.candle-0 { background: linear-gradient(to bottom, #FFD700, #F4A824); }
+.candle-1 { background: linear-gradient(to bottom, #E91E8C, #C2185B); }
+.candle-2 { background: linear-gradient(to bottom, #A855D4, #6B1E8B); }
+
+.flame {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 11px;
+  background: radial-gradient(ellipse at 50% 80%, #FF6600 0%, #FFD700 60%, transparent 100%);
+  border-radius: 50% 50% 30% 30%;
+  animation: flicker 0.85s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 4px rgba(255,150,0,0.8));
+}
+
+/* Layers */
+
+.cake-layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layer-top    { bottom: 180px; width: 140px; }
+.layer-mid    { bottom: 100px; width: 190px; }
+.layer-bottom { bottom: 20px;  width: 240px; }
+
+@media (min-width: 480px) {
+  .layer-top    { bottom: 215px; width: 160px; }
+  .layer-mid    { bottom: 120px; width: 220px; }
+  .layer-bottom { bottom: 25px;  width: 280px; }
+}
+
+/* Frosting */
+
+.frosting {
+  width: 110%;
+  height: 18px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background: rgba(255,255,255,0.92);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.3);
+}
+
+.frosting-top { background: rgba(255,240,200,0.95); }
+.frosting-mid { background: rgba(255,255,255,0.9); }
+.frosting-bottom { background: rgba(220,200,255,0.9); }
+
+/* Layer bodies */
+
+.layer-body {
+  width: 100%;
+  border-radius: 0 0 6px 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.layer-gold {
+  height: 52px;
+  background: linear-gradient(145deg, #F4C842, #D4A017);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.layer-pink {
+  height: 62px;
+  background: linear-gradient(145deg, #E91E8C, #A01060);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15);
+  background-image: linear-gradient(145deg, #E91E8C, #A01060),
+    repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(255,255,255,0.06) 10px),
+    repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(255,255,255,0.06) 10px);
+}
+
+.layer-purple {
+  height: 72px;
+  background: linear-gradient(145deg, #8B2FC4, #4A1060);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+  background-image: linear-gradient(145deg, #8B2FC4, #4A1060),
+    repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(255,255,255,0.05) 10px),
+    repeating-linear-gradient(90deg, transparent, transparent 9px, rgba(255,255,255,0.05) 10px);
+}
+
+/* Studs on top layer */
+
+.layer-studs {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.stud {
+  display: block;
+  width: 14px;
+  height: 7px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Brick base */
+
+.cake-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 20px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(
+    to right,
+    #4A1060 0, #4A1060 38px,
+    #6B1E8B 38px, #6B1E8B 80px
+  );
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 480px) {
+  .cake-base { width: 320px; }
+}
+
+/* ---- Copy column ---- */
+
+.cake-copy { animation: fadeInUp 0.7s ease 0.3s both; }
+
+.cake-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.cake-text {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.cake-menu-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--clr-gold-glass);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: var(--radius-full);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--clr-gold-300);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 859px) {
+  .cake-title { text-align: center; }
+  .cake-copy { text-align: center; }
+  .cake-menu-note { display: flex; justify-content: center; }
+}

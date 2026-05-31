@@ -1,0 +1,296 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 35%, #3D0A70 0%, #1A0535 55%, #0D0220 100%);
+  overflow: hidden;
+}
+
+.intro-screen.intro-exiting {
+  animation: introExit 0.75s ease forwards;
+}
+
+/* ---- Sparkles ---- */
+
+.intro-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.intro-sparkle {
+  position: absolute;
+  display: block;
+  font-size: 0;
+  animation: starTwinkle var(--dur, 3s) ease-in-out infinite;
+}
+
+.intro-sparkle::before {
+  content: '✦';
+  position: absolute;
+  font-size: 13px;
+  color: #FFD700;
+  animation: inherit;
+}
+
+.intro-sparkle::after {
+  content: '✦';
+  position: absolute;
+  font-size: 8px;
+  color: #F06292;
+  top: 14px;
+  left: 8px;
+  animation: starTwinkle calc(var(--dur, 3s) * 0.8) ease-in-out infinite reverse;
+}
+
+/* ---- Floating bricks ---- */
+
+.intro-brick {
+  position: absolute;
+  border-radius: 5px;
+  opacity: 0.65;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 0 7px;
+  animation: float var(--dur, 4s) ease-in-out infinite;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.intro-brick-stud {
+  display: block;
+  width: 11px;
+  height: 6px;
+  background: inherit;
+  border-radius: 3px 3px 0 0;
+  margin-top: -6px;
+  filter: brightness(1.4);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+
+/* ---- Main content ---- */
+
+.intro-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 640px;
+  animation: introContentIn 0.9s ease 0.25s both;
+}
+
+.intro-crown {
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+  animation: glowPulse 2.2s ease-in-out infinite;
+}
+
+.intro-invite {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.intro-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 9vw, 4.8rem);
+  line-height: 1.12;
+  background: linear-gradient(135deg, #FFD700 0%, #FFEC6E 30%, #F48FB1 65%, #FFD700 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4.5s linear infinite;
+  filter: drop-shadow(0 2px 10px rgba(255, 215, 0, 0.4));
+  margin-bottom: 0.5rem;
+}
+
+.intro-num {
+  font-size: 120%;
+}
+
+.intro-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  color: var(--clr-pink-300);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.intro-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.intro-sep {
+  color: var(--clr-gold-400);
+  font-size: 1.3em;
+}
+
+/* ---- Buttons ---- */
+
+.intro-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .intro-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.intro-btn {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.intro-btn:focus-visible {
+  outline: 3px solid var(--clr-gold-400);
+  outline-offset: 4px;
+}
+
+.intro-btn-music {
+  background: linear-gradient(135deg, #F4A824, #FFD700);
+  color: #1A0535;
+  box-shadow: 0 4px 22px rgba(255, 215, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+  font-weight: 900;
+}
+
+.intro-btn-music:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(255, 215, 0, 0.65);
+}
+
+.intro-btn-quiet {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.intro-btn-quiet:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.intro-deadline {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
+}
+
+/* ---- CSS Castle ---- */
+
+.intro-castle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  animation: introCastleRise 1.6s ease 0.6s forwards;
+  pointer-events: none;
+  gap: 0;
+}
+
+.castle-side-tower {
+  width: 68px;
+  height: 130px;
+  background: linear-gradient(to top, rgba(74,16,96,0.85), rgba(107,30,139,0.45));
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+}
+
+.castle-merlons {
+  position: absolute;
+  top: -13px;
+  left: 0;
+  right: 0;
+  height: 13px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(107,30,139,0.7) 0, rgba(107,30,139,0.7) 11px,
+    transparent 11px, transparent 22px
+  );
+}
+
+.castle-wing {
+  width: 70px;
+  height: 75px;
+  background: linear-gradient(to top, rgba(74,16,96,0.75), rgba(107,30,139,0.35));
+}
+
+.castle-keep {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(to top, rgba(74,16,96,0.9), rgba(107,30,139,0.5));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.castle-keep-merlons {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(107,30,139,0.8) 0, rgba(107,30,139,0.8) 16px,
+    transparent 16px, transparent 32px
+  );
+}
+
+.castle-arch {
+  width: 54px;
+  height: 75px;
+  background: radial-gradient(ellipse at top, rgba(13,2,32,0.95) 50%, transparent 100%);
+  border-radius: 50% 50% 0 0;
+}
+
+/* Responsive */
+
+@media (max-width: 540px) {
+  .intro-castle {
+    transform: translateX(-50%) scale(0.55);
+    transform-origin: bottom center;
+  }
+}

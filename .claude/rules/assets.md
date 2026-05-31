@@ -16,22 +16,8 @@ Before using images, video, audio, fonts, PDFs, or other files:
 2. Confirm exact file names.
 3. Confirm capitalization.
 4. Confirm file extensions.
-5. Confirm whether assets belong in `public`, `src/assets`, or another folder.
+5. Confirm whether assets belong in public, src/assets, or another folder.
 6. Use paths that match the framework.
-
-## Common Rules
-
-For Vite/React:
-
-- Public assets usually use `/filename.ext` or `/images/filename.ext`
-- Imported assets usually live in `src/assets`
-- Do not reference files that do not exist
-
-For Next.js:
-
-- Public assets usually live in `public`
-- Use paths beginning with `/`
-- Use Next Image only when configured properly
 
 ## Do Not
 

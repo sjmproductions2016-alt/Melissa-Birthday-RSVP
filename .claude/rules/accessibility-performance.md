@@ -9,7 +9,6 @@ Every website must be usable, responsive, and reasonably performant.
 Use:
 
 - Semantic HTML
-- One clear H1 per page when appropriate
 - Proper heading order
 - Accessible buttons and links
 - Labels for forms
@@ -53,13 +52,3 @@ Check:
 - 1440px desktop
 
 The mobile layout should feel designed, not squeezed.
-
-## Final Check
-
-Before finalizing:
-
-1. Confirm keyboard usability.
-2. Confirm mobile layout.
-3. Confirm no obvious layout shift.
-4. Confirm major motion respects reduced motion.
-5. Run available build checks.

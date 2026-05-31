@@ -1,0 +1,74 @@
+.footer {
+  background: var(--clr-purple-950);
+  border-top: 1px solid rgba(255,215,0,0.12);
+  padding: 3rem 0 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-crown {
+  font-size: 2rem;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(255,215,0,0.6));
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--clr-gold-400), var(--clr-pink-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+
+.footer-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  font-weight: 700;
+}
+
+.footer-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-sep {
+  color: var(--clr-gold-400);
+}
+
+.footer-rsvp-btn {
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+}
+
+.footer-fine {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.06em;
+}

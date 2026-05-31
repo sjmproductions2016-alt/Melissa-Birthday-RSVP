@@ -1,0 +1,140 @@
+.signature-section {
+  background: linear-gradient(180deg, var(--clr-purple-800) 0%, var(--clr-purple-900) 100%);
+}
+
+.signature-sub {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  margin-top: -2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Form */
+
+.wish-form {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  background: var(--clr-glass);
+  border: 1px solid rgba(255,215,0,0.15);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.wish-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wish-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.wish-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.65);
+}
+
+.wish-input {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  color: var(--clr-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.wish-input::placeholder { color: rgba(255,255,255,0.28); }
+
+.wish-input:focus {
+  outline: none;
+  border-color: var(--clr-gold-400);
+}
+
+.wish-input:focus-visible {
+  outline: 3px solid var(--clr-gold-400);
+  outline-offset: 2px;
+}
+
+.wish-textarea { resize: vertical; min-height: 72px; }
+
+.wish-submit { width: 100%; font-size: 1.1rem; }
+
+/* Wish wall grid */
+
+.wish-wall {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .wish-wall { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .wish-wall { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Cards */
+
+.wish-card {
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.25rem;
+  position: relative;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease;
+  animation: slideInCard 0.4s ease both;
+}
+
+.wish-card:hover { transform: translateY(-4px) rotate(-0.5deg); }
+
+.wish-card-new { animation: scaleIn 0.45s ease; }
+
+.wish-pink   { background: linear-gradient(135deg, rgba(233,30,140,0.22), rgba(199,14,80,0.12)); border: 1px solid rgba(233,30,140,0.3); }
+.wish-gold   { background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(244,168,36,0.08)); border: 1px solid rgba(255,215,0,0.25); }
+.wish-purple { background: linear-gradient(135deg, rgba(139,47,196,0.22), rgba(74,16,96,0.15)); border: 1px solid rgba(139,47,196,0.3); }
+.wish-teal   { background: linear-gradient(135deg, rgba(100,180,255,0.12), rgba(60,130,220,0.08)); border: 1px solid rgba(100,180,255,0.2); }
+
+.wish-sample-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.07);
+  border-radius: var(--radius-full);
+  padding: 0.15rem 0.5rem;
+}
+
+.wish-message {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.55;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.wish-name {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.5);
+  text-align: right;
+}
